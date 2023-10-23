@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 
-import { Header, TextField } from '~/shared/ui'
 import SendIcon from '/public/icons/send.svg'
+import Play from '/public/icons/play.svg'
+
+import { Header, TextField } from '~/shared/ui'
+import { IconButton } from '~/shared/ui/icon-button'
+import { Message } from '~/entities/message'
+import { StreamPlayer } from '~/entities/stream-player'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +24,9 @@ export const HomePage = () => {
                 <Header />
                 <main className='container'>
                     <TextField icon={{ src: SendIcon.src, alt: 'send' }} />
+                    <IconButton icon={{ src: Play.src, alt: 'play' }} />
+                    <Message />
+                    <StreamPlayer />
                 </main>
             </div>
         </>
