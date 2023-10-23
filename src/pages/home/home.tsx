@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 
+import { Header } from '~/shared/ui'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const HomePage = () => {
@@ -12,9 +14,9 @@ export const HomePage = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={`${inter.className}`}>
-                main
-            </main>
+            <div className={inter.className}>
+                <Header />
+            </div>
         </>
     )
 }
