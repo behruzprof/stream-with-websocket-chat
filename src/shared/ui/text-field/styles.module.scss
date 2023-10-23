@@ -1,0 +1,32 @@
+@import '~/shared/styles/vars.scss';
+
+.wrapper {
+  position: relative;
+
+  .input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: $white-color;
+    background-color: $bg-gunmetal-2;
+    border-radius: 8px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $white-color;
+    }
+  }
+
+  .icon {
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}

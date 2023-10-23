@@ -1,0 +1,9 @@
+.header {
+  composes: container from global;
+  margin-top: 20px;
+
+  .logo {
+    font-size: 25px;
+    font-weight: 500;
+  }
+}

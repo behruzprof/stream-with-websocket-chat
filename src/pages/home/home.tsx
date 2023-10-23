@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 
-import { Header } from '~/shared/ui'
+import { Header, TextField } from '~/shared/ui'
+import SendIcon from '/public/icons/send.svg'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,9 @@ export const HomePage = () => {
             </Head>
             <div className={inter.className}>
                 <Header />
+                <main className='container'>
+                    <TextField icon={{ src: SendIcon.src, alt: 'send' }} />
+                </main>
             </div>
         </>
     )

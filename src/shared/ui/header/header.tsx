@@ -1,9 +1,10 @@
-import React from 'react'
+
+import styles from './styles.module.scss'
 
 export const Header = () => {
     return (
-        <div className='container'>
-            
+        <div className={styles.header}>
+            <div className={styles.logo}>DWED</div>
         </div>
     )
 }
