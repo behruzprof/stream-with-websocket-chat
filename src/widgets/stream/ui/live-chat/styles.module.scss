@@ -1,0 +1,25 @@
+@import '~/shared/styles/vars.scss';
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  max-height: 485px;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: $bg-gunmetal-2;
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    border-radius: 10px;
+    overflow-y: auto;
+  }
+}
+
+.footer {
+  margin-top: 20px;
+}

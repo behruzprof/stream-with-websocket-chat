@@ -8,6 +8,7 @@ import { Header, TextField } from '~/shared/ui'
 import { IconButton } from '~/shared/ui/icon-button'
 import { Message } from '~/entities/message'
 import { StreamPlayer } from '~/entities/stream-player'
+import { Stream } from '~/widgets/stream'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,10 +24,7 @@ export const HomePage = () => {
             <div className={inter.className}>
                 <Header />
                 <main className='container'>
-                    <TextField icon={{ src: SendIcon.src, alt: 'send' }} />
-                    <IconButton icon={{ src: Play.src, alt: 'play' }} />
-                    <Message />
-                    <StreamPlayer />
+                    <Stream />
                 </main>
             </div>
         </>

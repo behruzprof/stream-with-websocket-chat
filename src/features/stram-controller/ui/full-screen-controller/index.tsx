@@ -12,14 +12,15 @@ export const FullScreenController = () => {
     const isFullScreen = useSelector((state: RootState) => state.videoPlayer.isFullScreen)
 
     function toggleFullScreen() {
-        if (isFullScreen && !document.fullscreenElement) {
-            document.documentElement.requestFullscreen()
+        if (!isFullScreen && !document.fullscreenElement) {
+            dispatch(StreamPlayerModel.setIsFullScreen(true))
             dispatch(StreamPlayerModel.setIsScreenOnScreen(true))
+            document.documentElement.requestFullscreen()
         } else if (document.exitFullscreen) {
             document.exitFullscreen()
+            dispatch(StreamPlayerModel.setIsFullScreen(false))
             dispatch(StreamPlayerModel.setIsScreenOnScreen(false))
         }
-        dispatch(StreamPlayerModel.setIsFullScreen(!isFullScreen))
     }
 
 

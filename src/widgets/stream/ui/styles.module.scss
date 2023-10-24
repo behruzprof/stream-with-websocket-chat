@@ -1,0 +1,42 @@
+@import '~/shared/styles/vars.scss';
+
+.wrapper {
+  margin-top: 20px;
+
+  .title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 20px;
+
+    h5 {
+      font-size: 14px;
+      line-height: 15px;
+    }
+    h6 {
+      font-size: 8px;
+      color: $gunmetal-color-1;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 0px;
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+
+      .watching {
+        font-weight: 500;
+      }
+    }
+
+    &-right {
+      color: red;
+    }
+  }
+}

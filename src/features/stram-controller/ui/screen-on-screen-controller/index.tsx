@@ -20,8 +20,8 @@ export const ScreenOnScreenController = () => {
     return (
         <>
             {isScreenOnScreen
-                ? <IconButton icon={{ src: ScreenFullIcon.src }} onClick={toggleScreenSize} />
-                : <IconButton icon={{ src: ScreenNormalIcon.src }} onClick={toggleScreenSize} />
+                ? <IconButton icon={{ src: ScreenNormalIcon.src }} onClick={toggleScreenSize} />
+                : <IconButton icon={{ src: ScreenFullIcon.src }} onClick={toggleScreenSize} />
             }
         </>
     )

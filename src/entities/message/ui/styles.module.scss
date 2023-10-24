@@ -6,6 +6,9 @@
   flex-direction: column;
   justify-content: center;
   row-gap: 10px;
+  background-color: $bg-gunmetal-3;
+  padding: 20px 15px;
+  border-radius: 10px;
 
   &-header {
     display: flex;
@@ -36,6 +39,7 @@
   }
 
   &-text {
+    line-height: 20px;
     a {
       color: blue;
       text-decoration: underline;
