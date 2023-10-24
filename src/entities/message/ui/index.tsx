@@ -3,29 +3,35 @@ import { useState } from 'react'
 
 import styles from './styles.module.scss'
 
-const TEXT = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quibusdam optio fuga distinctio soluta exercitationem quam rerum iste illo repudiandae officia tenetur neque itaque minus eos cum est, dolores qui ipsa placeat unde nisi velit praesentium inventore! Suscipit quas facere animi ipsam, ad ab dolorum ipsa nihil atque dolore magnam.'
+interface MessageProps {
+  message: IMessage
+}
 
-export const Message = () => {
-  const { value: isTruncated, toggle } = useToggle(true)
 
-  const truncatedText = TEXT.split(' ').slice(0, 20).join(' ') + '...'
+export const Message = ({ message }: MessageProps) => {
+  const { value: isShow, toggle } = useToggle(true)
+
+  const isLarge = message.text.split('').length >= 40
+
+  const truncatedText = message.text.split('').slice(0, 40).join('') + '...'
 
   return (
     <div className={styles.message}>
       <div className={styles['message-header']}>
         <div className={styles['message-image']}>
-          <Image width={40} height={40} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWR89EvH9ioXbj_sjTwDAroSfvJVyNaN6tOgTlUQVrgkMBcSjQUAW-RlficXlTSfPQR7Q&usqp=CAU" alt="" />
+          <Image width={40} height={40} src={message.imageUrl} alt={message.author} />
         </div>
         <div className={styles['message-author']}>
           <h5>
-            Muhammadamin Shifler
+            {message.author}
           </h5>
           <h6>
-            Menager
+            {message.job}
           </h6>
         </div>
       </div>
-      <p className={styles['message-text']}>{isTruncated ? truncatedText : TEXT}<a onClick={toggle}>{isTruncated ? 'more' : 'hide'}</a></p>
+      <p className={styles['message-text']}>{isLarge && isShow ? truncatedText : message.text}</p>
+      {isLarge && <a onClick={toggle}>{isShow ? 'more' : 'hide'}</a>}
     </div>
   )
 }

@@ -40,11 +40,12 @@
 
   &-text {
     line-height: 20px;
-    a {
-      color: blue;
-      text-decoration: underline;
-      margin-left: 5px;
-      cursor: pointer;
-    }
+  }
+
+  a {
+    color: blue;
+    text-decoration: underline;
+    margin-left: 5px;
+    cursor: pointer;
   }
 }

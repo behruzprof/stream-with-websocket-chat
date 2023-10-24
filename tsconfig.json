@@ -36,7 +36,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "websocket.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"pnpm run websocket-dev\" \"pnpm run next-dev\"",
+    "websocket-dev": "node websocket.js",
+    "next-dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,12 +16,15 @@
     "react": "^18",
     "react-dom": "^18",
     "react-redux": "^8.1.3",
-    "redux": "^4.2.1"
+    "redux": "^4.2.1",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
     "sass": "^1.69.4",
     "typescript": "^5",
     "typescript-plugin-css-modules": "^5.0.2"
