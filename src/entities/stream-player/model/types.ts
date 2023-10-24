@@ -4,7 +4,7 @@ export type StreamPlayerState = {
   src: string | null
   watching: number
   isLoading: boolean
-  isPlayed: boolean
   isPaused: boolean
   isFullScreen: boolean
+  isScreenOnScreen: boolean
 }

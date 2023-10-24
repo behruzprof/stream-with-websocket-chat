@@ -8,8 +8,8 @@ const initialState: StreamPlayerState = {
   watching: 0,
   isLoading: true,
   isPaused: true,
-  isPlayed: false,
-  isFullScreen: false
+  isFullScreen: false,
+  isScreenOnScreen: false
 }
 
 export const streamPlayerSlice = createSlice({
@@ -34,11 +34,11 @@ export const streamPlayerSlice = createSlice({
     setIsPaused(state, action: PayloadAction<boolean>) {
       return { ...state, isPaused: action.payload }
     },
-    setIsPlayed(state, action: PayloadAction<boolean>) {
-      return { ...state, isPlayed: action.payload }
-    },
     setIsFullScreen(state, action: PayloadAction<boolean>) {
       return { ...state, isFullScreen: action.payload }
+    },
+    setIsScreenOnScreen(state, action: PayloadAction<boolean>) {
+      return { ...state, isScreenOnScreen: action.payload }
     }
   }
 })
@@ -50,6 +50,6 @@ export const {
   setWatching,
   setIsLoading,
   setIsPaused,
-  setIsPlayed,
-  setIsFullScreen
+  setIsFullScreen,
+  setIsScreenOnScreen
 } = streamPlayerSlice.actions

@@ -1,15 +1,36 @@
+import { ReactNode } from 'react'
 import { useSelector } from 'react-redux'
+
+import { Layout } from './layout'
+
 import styles from './styles.module.scss'
+interface StreamPlayerProps {
+    PlayController: ReactNode,
+    OtherControllers: ReactNode[]
+}
 
-export const StreamPlayer = () => {
-    const { isLoading } = useSelector((state: RootState) => state.videoPlayer)
-
-    if (isLoading) return <p>Loading...</p>
+export const StreamPlayer = ({ PlayController, OtherControllers }: StreamPlayerProps) => {
+    const { isScreenOnScreen } = useSelector((state: RootState) => state.videoPlayer)
 
     return (
-        <video
-            className={styles.video}
-            controls
-            src='https://res.cloudinary.com/dssvrf9oz/video/upload/v1635662987/pexels-pavel-danilyuk-5359634_1_gmixla.mp4'></video>
+        <Layout screenOnScreen={isScreenOnScreen} video={
+            <video
+                className={styles.video}
+                src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'>
+            </video>
+        }>
+            <div className={styles.wrapper}>
+
+                <div className={styles['played-controls']}>
+
+                    {PlayController}
+                    <div className={styles['right-controls']}>
+                        {OtherControllers}
+                    </div>
+                </div>
+
+            </div>
+
+        </Layout>
     )
 }
